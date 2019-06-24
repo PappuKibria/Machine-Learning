@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 13 03:56:30 2019
+Created on Mon Jun 17 01:56:45 2019
 
 @author: Kibria
 """
@@ -26,8 +26,8 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.fit_transform(X_test)
 
 #Fitting classifier to the training set
-from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression(random_state=0)
+from sklearn.svm import SVC
+classifier = SVC(kernel='linear', random_state=0)
 classifier.fit(X_train, y_train)
 
 #Predicting a new result
@@ -72,7 +72,6 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
-
 
 
 
