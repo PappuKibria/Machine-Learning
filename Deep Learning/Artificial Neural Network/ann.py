@@ -9,6 +9,7 @@ Created on Mon Jun 24 10:51:40 2019
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+
 #importing the dataset
 dataset = pd.read_csv("Churn_Modelling.csv")
 X = dataset.iloc[:,3:13].values
@@ -54,7 +55,7 @@ classifier.add(Dense(output_dim = 6, init = 'uniform', activation = 'relu'))
 classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid'))
 
 #Compiling the ANN
-classifier.compile(optimizer = 'adam', loss = 'binary_crossntropy', metrics = ['accuracy'])
+classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 #Fitting the ANN to the training set
 classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 100)
